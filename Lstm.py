@@ -3,7 +3,7 @@ import numpy as np
 
 def sigmoid(x):
 
-	return np.
+	return 1/(1+np.exp(-x))
 
 
 def softmax(x):
@@ -268,8 +268,8 @@ class Lstm:
 			
 			p= softmax(y)
 			
-			#ix = np.random.choice(range(self.iSize),p=p.ravel())
-			ix = np.argmax(p)
+			ix = np.random.choice(range(self.iSize),p=p.ravel())
+			#ix = np.argmax(p)
 			x=np.zeros((self.iSize,1))
 			x[ix]=1
 			
